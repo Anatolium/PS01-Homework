@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>7 чудес света</title>
+<style>
+    body, html {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: #87CEEB;
+        color: yellow;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+    .block {
+        width: 30%;
+        background-color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .image {
+        width: 400px;
+        height: 250px;
+        margin: 10px auto;
+        background-size: cover;
+        background-position: center;
+    }
+    .button {
+        background-color: #87CEEB;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="header">7 чудес света</div>
+<div class="grid">
+    <script>
+        const wonders = [
+            "Пирамида Хеопса",
+            "Висячие сады Семирамиды",
+            "Статуя Зевса в Олимпии",
+            "Храм Артемиды в Эфесе",
+            "Мавзолей в Галикарнасе",
+            "Колосс Родосский",
+            "Александрийский маяк"
+        ];
+        document.write(
+            `<div class="block">
+                <h2>Пирамида Хеопса</h2>
+                <div class="image" style="background-image: url('/img/picture-1.jpg');"></div>
+                <button class="button" onclick="openModal(0)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Висячие сады Семирамиды</h2>
+                <div class="image" style="background-image: url('/img/picture-2.jpg');"></div>
+                <button class="button" onclick="openModal(1)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Статуя Зевса в Олимпии</h2>
+                <div class="image" style="background-image: url('/img/picture-3.jpg');"></div>
+                <button class="button" onclick="openModal(2)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Храм Артемиды в Эфесе</h2>
+                <div class="image" style="background-image: url('/img/picture-4.jpg');"></div>
+                <button class="button" onclick="openModal(3)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Мавзолей в Галикарнасе</h2>
+                <div class="image" style="background-image: url('/img/picture-5.jpg');"></div>
+                <button class="button" onclick="openModal(4)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Колосс Родосский</h2>
+                <div class="image" style="background-image: url('/img/picture-6.jpg');"></div>
+                <button class="button" onclick="openModal(5)">Подробнее</button>
+            </div>`
+        );
+        document.write(
+            `<div class="block">
+                <h2>Александрийский маяк</h2>
+                <div class="image" style="background-image: url('/img/picture-7.jpg');"></div>
+                <button class="button" onclick="openModal(6)">Подробнее</button>
+            </div>`
+        );
+    </script>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalText">Это невероятное чудо света</p>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var modalText = document.getElementById("modalText");
+    var span = document.getElementsByClassName("close")[0];
+
+    function openModal(index) {
+        modalText.textContent = wonders[index];
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
