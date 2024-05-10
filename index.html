@@ -26,12 +26,14 @@
         padding: 0 10px;
     }
     .block {
+        color: YellowGreen;
         width: 30%;
         background-color: white;
         margin-bottom: 10px;
         text-align: center;
         padding: 20px;
         box-sizing: border-box;
+        font-size: 12px;
     }
     .image {
         width: 400px;
@@ -70,7 +72,7 @@
     .close {
         color: #aaaaaa;
         float: right;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
     }
     .close:hover,
@@ -106,49 +108,50 @@
         ];
         document.write(
             `<div class="block">
-                <h2>Пирамида Хеопса</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#piramida-heopsa" target="_blank">Пирамида Хеопса</a></h2>
                 <div class="image" style="background-image: url('/img/picture-1.jpg');"></div>
                 <button class="button" onclick="openModal(0)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Висячие сады Семирамиды</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#visyachie-sady-semiramidy" target="_blank">Висячие сады Семирамиды</a></h2>
+<!--                <h2>Висячие сады Семирамиды</h2>-->
                 <div class="image" style="background-image: url('/img/picture-2.jpg');"></div>
                 <button class="button" onclick="openModal(1)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Статуя Зевса в Олимпии</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#statuya-zevsa-v-olimpii" target="_blank">Статуя Зевса в Олимпии</a></h2>
                 <div class="image" style="background-image: url('/img/picture-3.jpg');"></div>
                 <button class="button" onclick="openModal(2)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Храм Артемиды в Эфесе</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#hram-artemidy" target="_blank">Храм Артемиды в Эфесе</a></h2>
                 <div class="image" style="background-image: url('/img/picture-4.jpg');"></div>
                 <button class="button" onclick="openModal(3)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Мавзолей в Галикарнасе</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#mavzoley-mavsola" target="_blank">Мавзолей в Галикарнасе</a></h2>
                 <div class="image" style="background-image: url('/img/picture-5.jpg');"></div>
                 <button class="button" onclick="openModal(4)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Колосс Родосский</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#statuya-kolossa-rodosskogo" target="_blank">Колосс Родосский</a></h2>
                 <div class="image" style="background-image: url('/img/picture-6.jpg');"></div>
                 <button class="button" onclick="openModal(5)">Подробнее</button>
             </div>`
         );
         document.write(
             `<div class="block">
-                <h2>Александрийский маяк</h2>
+                <h2><a href="https://travel.yandex.ru/journal/sem-chudes-sveta/#aleksandriyskiy-mayak" target="_blank">Александрийский маяк</a></h2>
                 <div class="image" style="background-image: url('/img/picture-7.jpg');"></div>
                 <button class="button" onclick="openModal(6)">Подробнее</button>
             </div>`
@@ -182,6 +185,12 @@
             modal.style.display = "none";
         }
     }
+
+    window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    });
 </script>
 </body>
 </html>
